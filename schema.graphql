@@ -1,0 +1,106 @@
+type ContactDetails {
+  address: String
+}
+
+type City {
+  IATACode: String
+  name: String
+  country: Country
+}
+
+type Country {
+  code: String
+  name: String
+}
+
+type Segment {
+  id: Int
+  type: String
+  informational: Boolean
+  departFrom: City
+  arriveOn: City
+  marketingFlight: Flight
+}
+
+type Flight {
+  number: String
+  carrier: Carrier
+  status: Status
+  numberOfStops: Int
+  sellingClass: SellingClass
+  operatingFlight: OperatingFlight
+}
+
+type Carrier {
+  code: String
+  name: String
+}
+
+type Status {
+  code: String
+  name: String
+}
+
+type SellingClass {
+  code: String
+}
+
+type OperatingFlight {
+  number: String
+  carrier: Carrier
+  duration: String
+  flown: Boolean
+  checkInStart: String
+  localCheckInStart: String
+  checkInEnd: String
+  localCheckInEnd: String
+  scheduledArrival: String
+  localScheduledArrival: String
+  scheduledDeparture: String
+  localScheduledDeparture: String
+  arrivalTerminal: Terminal
+  cabin: Cabin
+  equipment: Equipment
+}
+
+type Terminal {
+  name: String
+}
+
+type Cabin {
+  code: String
+  name: String
+}
+
+type Equipment {
+  code: String
+  name: String
+}
+
+type Itinerary {
+  type: String
+  connections: [Segment]
+}
+
+type Passenger {
+  id: Int
+  firstName: String
+  lastName: String
+  title: Title
+}
+
+type Title {
+  code: String
+  name: String
+}
+
+type Booking {
+  bookingCode: String
+  contactDetails: [ContactDetails]
+  itinerary: Itinerary
+  passengers: Passenger
+}
+
+type Query {
+  booking: Booking
+}

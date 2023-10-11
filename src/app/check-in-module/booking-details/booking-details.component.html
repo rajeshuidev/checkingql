@@ -1,0 +1,152 @@
+<div class="booking-details-page">
+  <div class="booking-details-heading"> Your Booking Details</div>
+  <hr>
+  <div class="booking-sub-header" tabindex="1">
+      <!-- <div>{{ bookingDetails | json }}</div> -->
+      <mat-accordion>
+          <mat-expansion-panel>
+              <mat-expansion-panel-header  class="details-panel-header">
+                  <mat-panel-title>
+                      Booking code Details 
+                  </mat-panel-title>
+                  <mat-panel-description>
+                  </mat-panel-description>
+              </mat-expansion-panel-header>
+              <table class="details-data">
+                  <tr>
+                      <td><span class="details-table-data-main">Booking code:</span>{{bookingDetails[0]?.bookingCode}}</td>
+              </table>
+          </mat-expansion-panel>
+      </mat-accordion>
+  </div>
+  <div class="booking-sub-header" tabindex="2">
+      <mat-accordion>
+          <mat-expansion-panel>
+              <mat-expansion-panel-header  class="details-panel-header">
+                  <mat-panel-title>
+                      Passenger(s) Details
+                  </mat-panel-title>
+                  <mat-panel-description>
+                  </mat-panel-description>
+              </mat-expansion-panel-header>
+              <table class="details-data">
+                  <tr>
+                      <td><span class="details-table-data-main">Passenger id:</span> {{bookingDetails[0]?.passengers.id}} </td>
+                      <td> <span class="details-table-data-main">Salutation:</span> {{bookingDetails[0]?.passengers.title.name}}</td>
+                  </tr>
+                  <tr>
+                      <td><span class="details-table-data-main">First name:</span> {{bookingDetails[0]?.passengers.firstName}} </td>
+                      <td> <span class="details-table-data-main">Last name:</span> {{bookingDetails[0]?.passengers.lastName}}</td>
+                  </tr>
+              </table>
+          </mat-expansion-panel>
+      </mat-accordion>
+  </div>
+  <div>
+      <div class="booking-sub-header" tabindex="3">
+          <mat-accordion>
+              <mat-expansion-panel>
+                  <mat-expansion-panel-header  class="details-panel-header">
+                      <mat-panel-title>
+                          Itinary Details
+                      </mat-panel-title>
+                      <mat-panel-description>
+                      </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <table class="details-data">
+                      <tr>
+                          <td>
+                              <span class="details-table-data-main">itinerary type:</span>{{bookingDetails[0]?.itinerary.type}}
+                              <hr>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Depart From:</span> {{bookingDetails[0]?.itinerary.connections[0]?.origin.city.name}} </td>
+                          <td> <span class="details-table-data-main">Arraive On:</span> {{bookingDetails[0]?.itinerary.connections[0]?.destination.city.name}}</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">ITIA code:</span> {{bookingDetails[0]?.itinerary.connections[0]?.origin.IATACode}} </td>
+                          <td><span class="details-table-data-main"> ITIA Code:</span>{{bookingDetails[0]?.itinerary.connections[0]?.destination.IATACode}}</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Air port name:</span> {{bookingDetails[0]?.itinerary.connections[0]?.origin.name}} </td>
+                          <td><span class="details-table-data-main"> Country:</span> {{bookingDetails[0]?.itinerary.connections[0]?.destination.name}}</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Country:</span> {{bookingDetails[0]?.itinerary.connections[0]?.origin.city.country.name}} </td>
+                          <td> <span class="details-table-data-main">Country:</span> {{bookingDetails[0]?.itinerary.connections[0]?.destination.city.country.name}}</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Flight number:</span>1236 </td>
+                          <td> <span class="details-table-data-main">Flight code:</span> KL</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Flight carrier:</span> {{bookingDetails[0]?.itinerary.connections[0]?.segments[0]?.marketingFlight.carrier.name}} </td>
+                          <td><span class="details-table-data-main"> Confirmation status:</span> Confirmed</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Flight name:</span> Boeing 737-800 </td>
+                          <td> <span class="details-table-data-main">Flight code:</span> 73H</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Number of stops:</span> 0 </td>
+                          <td> <span class="details-table-data-main">Selling class:</span> Z</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Flight carrier:</span> KLM </td>
+                          <td> <span class="details-table-data-main">Booking Status:</span> Confirmed</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Selling class:</span> KLM </td>
+                          <td> <span class="details-table-data-main">Duration: </span>{{bookingDetails[0]?.itinerary.connections[0]?.duration}}</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Cabin code:</span> 10</td>
+                          <td><span class="details-table-data-main">Cabin class:</span> Business</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Check-in start:</span> 2016-10-13T03:35+02:00 </td>
+                          <td><span class="details-table-data-main"> Local check-in start:</span> 2016-10-13T03:35</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Check-in end:</span> 2016-10-14T08:35+02:00 </td>
+                          <td><span class="details-table-data-main"> Local check-in end:</span> 2016-10-14T08:35</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Scheduled arrival:</span> 2016-10-14T11:35+02:00 </td>
+                          <td> <span class="details-table-data-main">Local scheduled arrival:</span> 2016-10-14T11:35+02:00</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Scheduled departure:</span> 2016-10-14T11:35+02:00 </td>
+                          <td> <span class="details-table-data-main">Local scheduled departure:</span> 2016-10-14T11:35+02:00</td>
+                      </tr>
+                      <tr>
+                          <td><span class="details-table-data-main">Arrival terminal:</span> 2 </td>
+                          <td><span class="details-table-data-main">Terminal name:</span>  2</td>
+                      </tr>
+                  </table>
+              </mat-expansion-panel>
+          </mat-accordion>
+      </div>
+      <div class="booking-sub-header" tabindex="4">
+          <mat-accordion>
+              <mat-expansion-panel>
+                  <mat-expansion-panel-header  class="details-panel-header">
+                      <mat-panel-title>
+                          Contact Details
+                      </mat-panel-title>
+                      <mat-panel-description>
+                      </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <table class="details-data">
+                      <th></th>
+                      <th></th>
+                      <tr>
+                          <td><span class="details-table-data-main">Email address:</span> {{bookingDetails[0]?.contactDetails.class}} </td>
+                          <td> <span class="details-table-data-main">contact ddress:</span> {{bookingDetails[0]?.contactDetails.address}}</td>
+                      </tr>
+                  </table>
+              </mat-expansion-panel>
+          </mat-accordion>
+      </div>
+  </div>
